@@ -1,0 +1,100 @@
+\section{Expansión en Fracciones Continuas}
+\begin{defi}
+Una fracción continua es una fracción de la forma
+$$
+a_{0}+\cfrac{1}{a_{1} + \cfrac{1}{a_{2} + \ldots}}
+$$
+donde $a_{0}$ es un entero y los otros números $a_{n}$ con $n\geq1$ son números naturales.
+\\
+
+En lugar de escribir un número usando estas fracciones, es más común escribirlo de esta forma $a_{0}+[a_{1}, a_{2}, \ldots]$.
+
+Los números $a_{0},a_{1},a_{2},\ldots$ se llaman los cocientes de la fracción continua y a los 
+$$a_{0}+[a_{1}]=a_{0}+\frac{1}{a_{1}}$$
+$$a_{0}+[a_{1},a_{2}]=a_{0}+\cfrac{1}{a_{1}+\cfrac{1}{a_{2}}}
+$$
+$$
+\vdots
+$$
+se llaman reducidas.
+\end{defi}
+
+Plantearemos el siguiente teorema sin ninguna prueba, con el fin de enumerar algunas propiedades de las fracciones continuas:
+
+\begin{teo}
+Sea $x\in\mathbb{R}$ arbitrario:
+\begin{itemize}
+    \item[(a)] El número x tiene expansión en fracción continua.
+    \item[(b)] Toda fracción continua converge.
+    \item[(c)] La expansión en fracción continua de x es finita si y solo si x es racional.
+    \item[(d)] La expansión en fracción continua de x es única si y solo si x es irracional.
+\end{itemize}
+\end{teo}
+\begin{proof}
+En \cite{Portugues}.
+\end{proof}
+\begin{ejem}
+Veamos algunos números escritos en su expansión en fracción continua:
+\begin{itemize}
+    \item $\frac{22}{3}= 7 + \frac{1}{3} = 7+[3] \text{ pero también }\frac{22}{3}= 7 + \cfrac{1}{2 + \cfrac{1}{1}} = 7+[2,1]$
+    \\
+    
+    De aquí notamos que la expansión de los racionales no es única.
+    \item $\sqrt{2}=1+[2,2,2,2,\ldots]$, donde $a_{k}=2$ para todo $k\neq0$.
+    \item $\pi=3+[3,7,15,1,292,1,1,1,2,1,3,1,14,\ldots]$, donde no hay un comportamiento regular aparente en sus cocientes.
+\end{itemize}
+\end{ejem}
+\\
+Surge la siguiente pregunta ¿cómo se halla la expansión en fracción continua de un número irracional? Esto será respondido más adelante y comprendido mediante el Ejemplo 1.2.1.
+
+\begin{defi}
+Sea $x\in\mathbb{R}$. Denotaremos como
+\begin{itemize}
+    \item El número entero $a_{n}(x)$ es el n-ésimo cociente de x.
+    \item El número racional $a_{0} + [a_{1}(x), \ldots, a_{n}(x)]=\cfrac{p_{n}(x)}{q_{n}(x)}$ es la n-ésima reducida de $x$.
+\end{itemize}
+\end{defi}
+\\
+\\
+Por otro lado, para probar la convergencia de las reducidas el primer paso es ver las propiedades de las reducidas de un número x, la cual verifican las siguientes propiedades aritméticas (Propiedades (A),(B),(C)).
+\\
+
+A continuación fijaremos $x$ y, para simplificar la notación, escribimos $a_{i}, p_{i} \text{ y } q_{i}$ en lugar de $a_{i}(x), p_{i}(x) \text{ y } q_{i}(x)$ cuando no es necesario especificar el número x.
+\\
+
+Por convención, escribiremos
+$$
+q_{-1}(x)=0\text{ , } p_{0}(x)=a_{0} \quad\text{ y }\quad p_{-1}(x)=q_{0}(x)=1
+$$
+\begin{prop}
+\textbf{(Propiedades de las reducidas)}
+\begin{itemize}
+    \item[(A)] Para todo $n\geq1$ se verifica
+    $$
+    p_{n}=a_{n}p_{n-1}+p_{n-2} \quad \text{ y }\quad q_{n}=a_{n}q_{n-1}+q_{n-2}
+    $$
+    \item[(B)] Para todo $n\geq0$,
+    $$(I)\quad p_{n-1}q_{n} - p_{n}q_{n-1}=(-1)^{n}$$
+    $$
+    (II)\quad x=\frac{p_{n} + (T^{n}(x))p_{n-1}}{q_{n}+(T^{n}(x))q_{n-1}}
+    $$
+    \item[(C)] Para todo $n\geq2$ se verifica 
+    $$
+    p_{n}(x)\geq2^{(n-2)/2} \quad\text{ y }\quad q_{n}(x)\geq2^{(n-1)/2}
+    $$
+\end{itemize}
+\label{ProRed}
+\end{prop}
+\begin{proof}
+En \cite{Portugues}.
+\end{proof}
+
+\begin{obs}
+Notemos que la Propiedad (B) garantiza que cualquier divisor común de $p_{n}$ y $q_{n}$ debe ser también un divisor de $\pm$1. Por tanto, los números $p_{n}$ y $q_{n}$ son primos entre sí y la fracción $\cfrac{p_{n}}{q_{n}}$ es irreducible.
+\end{obs}
+\\
+Por último recordemos la definición de parte entera.
+
+\begin{defi}
+Denotamos como $\left\lfloor x\right\rfloor$ a la parte entera de x, esto es, $\left\lfloor x\right\rfloor=n$ tal que $n \leq x< n+1$ con $n\in\mathbb{Z}.$
+\end{defi}
