@@ -1,0 +1,381 @@
+\section{Itinerarios de la Transformación de Gauss}
+En este capítulo, daremos una prueba dinámica del Teorema \ref{teo3-1} donde estudiaremos los itinerarios de los puntos de $\mathbb{I}_{(0,1)}$ através de la transformación de Gauss, esto es determinaremos el intervalo $I_{k}$ que contiene el iterado i-ésimo de $x$ (en este caso $a_{i+1}(x)=k)$.
+ \\
+ 
+Recordemos que denotamos el conjunto de los números irracionales del intervalo (0,1) por $\mathbb{I}_{(0,1)}.$ Escribimos el intervalo (0,1) como la unión infinita de los intervalos 
+$$
+I_{k}=\left(\frac{1}{k+1},\frac{1}{k}\right], \quad k\geq1.
+$$
+Los extremos de los intervalos $I_{k}$ son precisamente los puntos de discontinuidad de la transformación de Gauss (excluida el origen). Recordemos que por la Observación \ref{obs2}, si $x\in\mathbb{I}_{(0,1)}$ entonces $T^{i}(x)\neq0$ para todo $i$ y por tanto $T^{i}(x)$ pertenece al interior de algún intervalo $I_{k}$ para todo $i\geq0$. Además se cumple lo siguiente:
+
+\begin{prop}
+Sea x $\in (0,1)$ un irracional y T es la transformación de Gauss. 
+$$
+a_{n}(x)=\left\lfloor\cfrac{1}{T^{n-1}(x)}\right\rfloor=k \Longleftrightarrow T^{n-1}(x)\in I_{k}
+$$
+
+\end{prop}
+
+\begin{proof}\hfill
+\\
+($\Leftarrow$) Sea x $\in (0,1)$ un irracional con expansión en fracción continua $[a_{1}(x),a_{2}(x),\dots]$. Evaluando x en T, tenemos que \\
+
+x=$\cfrac{1}{a_{1}(x)+\cfrac{1}{\ldots}}\Rightarrow T(x)=a_{1}(x)+\cfrac{1}{a_{2}(x)+\cfrac{1}{a_{3}(x)+\cfrac{1}{\ddots}}} - a_{1}(x)$
+\\
+\\
+
+T(x)=$\left[a_{2}(x), a_{3}(x), \dots\right]=\cfrac{1}{a_{2}(x)+\cfrac{1}{a_{3}(x)+\cfrac{1}{\ddots}}}$
+\\
+\\
+
+T$^{2}$(x)=$\left[a_{3}(x), a_{4}(x), \dots\right]=\cfrac{1}{a_{3}(x)+\cfrac{1}{a_{4}(x)+\cfrac{1}{\ddots}}}$
+\\
+
+$\quad\vdots$
+\\
+
+T$^{n-1}$(x)=$\left[a_{n}(x), a_{n+1}(x), \dots\right]=\cfrac{1}{a_{n}(x)+\cfrac{1}{a_{n+1}(x)+\cfrac{1}{a_{n+2}(x)+\cfrac{1}{\ddots}}}}$
+\\
+
+Se sigue inductivamente que, después de aplicar T exactamente $n-1$ veces el $a_{n}(x)$ es el cociente principal. 
+\\
+
+Podemos escribir $T^{n-1}(x)=\cfrac{1}{a_{n}(x)+m}$, \quad $m \in (0,1)$
+\\
+
+$\Rightarrow (T^{n-1}(x))^{-1}=a_{n}(x)+m< a_{n}(x) +1$, pues $m \in (0,1) $
+\\
+
+Además, como $a_{n}(x)\leq a_{n}(x)+m=(T^{n-1}(x))^{-1}$
+\\
+
+Entonces, $a_{n}(x)\leq (T^{n-1}(x))^{-1} < a_{n}(x)+1$
+\\
+
+i.e. $\cfrac{1}{a_{n}(x)+1}< T^{n-1}(x) \leq \cfrac{1}{a_{n}(x)}$
+\\
+
+De esto tenemos directamente que si $\cfrac{1}{k+1}< T^{n-1}(x) \leq \cfrac{1}{k}$, entonces $a_{n}(x)=k$ \\
+\\
+($\Rightarrow$) Consideramos $T^{n-1}(x) = [k,a_{n+1}(x),\dots]$, donde asumimos que $a_{n}(x) = k$
+\\
+Debido a la forma en que funciona $T$, sabemos que $0<[a_{n + 1}(x), a_{n + 2}(x), \dots] <1$ (i.e. no puede ser igual a ninguno de los extremos, porque eso implicaría que no existe $a_{n + 2}(x))$. Por lo tanto, podemos escribir $T^{n-1}(x)=\frac{1}{k+\alpha}$ con $\alpha \in (0,1)$. Tenemos lo mismo que para la vuelta, eso significa que $\frac{1}{k+1}< T^{n-1} \leq \frac{1}{k},$ es decir $T^{n-1}(x)\in I_{k}$.
+
+De esta forma queda probada la proposición.
+\end{proof}
+
+\begin{obs}
+La transformación de Gauss no es unifomemente expansiva, esto es, no existe $\lambda>1$ tal que $|T^{\prime}(x)|\geq\lambda>1$ para todo $x \in(0,1) - \left\{\frac{1}{k} : k\in\mathbb{N}\right\}$ (eliminamos exactamente los puntos de discontinuidad). En efecto, si $x\in I_{k}$, $T(x)=1/x - k$, k es la parte entera de $1/x$, así la derivada sería, $T'(x)= -1/x^2 < 0$. Luego, T es decreciente, es decir, si $x,y \in I_{k}$ y $x<y$ entonces, $T(x)>T(y)$.
+\end{obs} 
+
+\begin{obs}
+Por la definición de T, tenemos que $T(I_{k})=[0,1)$ para todo $k\geq1$.
+\end{obs}
+\begin{defi}
+Dados k,j $\in\mathbb{N}$, definimos $I_{k,j}$ como el subconjunto de $I_{k}$ tal que
+$
+T(I_{k,j})=I_{j} .
+$
+\label{defi3-2}
+\end{defi} 
+\begin{obs}
+Como $T$ es estrictamente monótona decreciente en $I_{k}$, entonces es inyectiva y por tanto tiene inversa, es decir, $I_{k,j}=T^{-1}(I_{j})$. Además, desde que $T(I_{k})=[0,1)$, obtenemos que los conjuntos $I_{k,j}$ están bien definidos y que son intervalos no vacíos (intervalos cerrados a izquierda y abiertos a derecha).
+\end{obs}
+Veámoslo de esta manera:
+
+
+$
+\text{Sea } x=[a_{1},a_{2},\ldots] \text{, para } x \in I_{a_{1}} \Rightarrow T(x)=\frac{1}{x}-\underbrace{\left\lfloor\frac{1}{x}\right\rfloor}_{=a_{1}}=\frac{1}{x}-a_{1}
+$ \\
+
+$
+T(x)=[a_{2},a_{3},\ldots] \text{, para } T(x) \in I_{a_{2}}\Rightarrow T^{2}(x)=\frac{1}{T(x)}-\underbrace{\left\lfloor\frac{1}{T(x)}\right\rfloor}_{=a_{2}}=\frac{1}{T(x)}-a_{2} \\
+$
+
+Como $T(x) \in I_{a_{2}}$ entonces $x\in T^{-1}(I_{a_{2}})=I_{a_{1},a_{2}}\subset I_{a_{1}}$.
+\\
+
+Tenemos que, para $x\in I_{a_{1},a_{2}}$ consideramos la parte entera de $1/T(x)$ igual a $a_{2}$  por tanto $T^{2}(x)=\frac{1}{T(x)}-a_{2}$.
+Véase la figura \ref{TG2}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=9cm]{chapter2/intervalos de segunda generación.jpg}
+    \caption{Intervalos de segunda generación}
+    \label{TG2}
+\end{figure}
+
+\begin{prop}
+La Transformación de Gauss tiene alguna expansividad uniforme: existe $\lambda>1$ tal que $(T^2)'(x)>\lambda$ para todo $x\in I_{a_{1}}$.
+\end{prop}
+\begin{proof}
+En efecto, tenemos que $T(x)=\frac{1}{x} - a_{1}=\frac{1-a_{1}x}{x},\quad x\in I_{a_{1}}$.
+\\
+\\
+$\Rightarrow T^{2}(x)=\frac{x}{1-a_{1}x}-a_{2},\quad x\in I_{a_{1},a_{2}}$ y $a_{2}$ es la parte entera de $\frac{x}{1-a_{1}x}$.
+\\
+\\
+Así la derivada es, ($T^{2})^{\prime}(x)=\frac{1-a_{1}x-x(-a_{1})}{(1-a_{1}x)^2}=\frac{1}{(1-a_{1}x)^{2}},\quad x\in I_{a_{1},a_{2}}\subset I_{a_{1}}$.
+\\
+\\
+$\Rightarrow x\in I_{a_{1}} \Rightarrow\frac{1}{a_{1}+1} <  x \leq \frac{1}{a_{1}} \Rightarrow -1 \leq -a_{1}x < \frac{-a_{1}}{a_{1}+1}$\\
+\\
+$\Rightarrow 0 \leq 1-a_{1}x < \frac{1}{a_{1}+1}$
+\\
+\\
+$\Rightarrow 0 \leq (1-a_{1}x)^{2} < (\frac{1}{a_{1}+1})^{2}$
+\\
+\\
+$\Rightarrow ({a_{1}+1})^{2}< \frac{1}{(1-a_{1}x)^{2}}=(T^{2})^{\prime}(x)$
+\\
+\\
+Como $a_{1}\in\mathbb{N}$, entonces $({a_{1}+1})^{2}>1$, tomamos $\lambda=({a_{1}+1})^{2}$.
+\\
+\\
+Luego, existe $\lambda>1$ tal que $(T^2)'(x)>\lambda$.
+\\
+Más aún, $T^{2}$ es creciente, pues, su derivada es mayor a cero. 
+\end{proof}
+
+\begin{prop}
+Sea $k\in\mathbb{N}$ y para toda familia de $k$ números naturales $i_{1},i_{2},\ldots,i_{k}$, están definidos los intervalos no vacíos $I_{i_{1},\ldots,i_{k}}$ que verifican las siguientes propiedades:
+\begin{enumerate}
+    \item $I_{i_{1},\ldots,i_{k-1},i_{k}}\subset I_{i_{1},\ldots,i_{k-1}}$
+    \item $T(I_{i_{1},\ldots,i_{k}})=I_{i_{2},\ldots,i_{k}}$ y
+    \item $T^{k-1}(I_{i_{1},\ldots,i_{k-1},i_{k}})=I_{i_{k}}$ (luego, $T^{k}(I_{i_{1},\ldots,i_{k}})=[0,1)$)
+\end{enumerate}
+\label{PropInterval}
+\end{prop} 
+
+\begin{proof}
+Probaremos por inducción sobre k. 
+\begin{enumerate}
+    \item[i)] Para k=2. Por la Definición \ref{defi3-2}, dado $I_{i_{2}}$ definimos $I_{i_{1},i_{2}}$ subconjunto de $I_{i_{1}}$ tal que $T(I_{i_{1},i_{2}})=I_{i_{2}}$ que vendría a ser la condición 1 y 2.
+    \\
+    Como $T(I_{i_{1},i_{2}})=I_{i_{2}}$ entonces $T^{2}(I_{i_{1},i_{2}})=T(I_{i_{2}})=[0,1)$ por lo que también tendríamos la condición 3.
+    \item[ii)] (Hip. Inductiva) Para k=n es válido:
+    \begin{itemize}
+    \item[H1] $I_{i_{1},\ldots,i_{n-1},i_{n}}\subset I_{i_{1},\ldots,i_{n-1}}$
+    \item[H2]
+    $T(I_{i_{1},\ldots,i_{n}})=I_{i_{2},\ldots,i_{n}}$ y
+    \item[H3] $T^{n-1}(I_{i_{1},\ldots,i_{n-1},i_{n}})=I_{i_{n}}$ (luego, $T^{n}(I_{i_{1},\ldots,i_{n}})=[0,1))$
+    \end{itemize}
+    \item[iii)]Veamos es válido para k=n+1. 
+    \\
+    En efecto, contruiremos los intervalos $I_{i_{1},\ldots,i_{n},i_{n+1}}$ de la etapa $n+1$. 
+    \begin{itemize}
+        \item Dados los números naturales $i_{1},\ldots,i_{n},i_{n+1}$ consideramos el intervalo $I_{i_{1},\ldots,i_{n}}$ y observamos que por $H3$,
+        $$
+        T^{n}(I_{i_{1},\ldots,i_{n}})=T(I_{i_{n}})=[0,1).
+        $$
+        
+        Como la transformación $T^{n}$ es estrictamente mónotona (creciente si n es par y decreciente si n es impar) tenemos que los conjuntos $I_{i_{1},\ldots,i_{n+1}}$ están bien definidos y que son intervalos no vacíos.
+        
+        Ahora, por el primer paso de inducción, dado $I_{i_{n+1}} \text{ , existe } \\
+        J\subset I_{i_{1},\ldots,i_{n}}$ tal que $T^{n}(J)=I_{i_{n+1}}$.
+        
+        Es suficiente tomar $I_{i_{1},\ldots,i_{n},i_{n+1}}=J$, entonces por construcción, $T^{n}(I_{i_{1},\ldots,i_{n},i_{n+1}})=I_{i_{n+1}}.$
+        Además, $T^{n+1}(I_{i_{1},\ldots,i_{n},i_{n+1}})=T(I_{i_{n+1}})=[0,1)$.
+        
+        Lo que verifica la condición 3.
+        \item Ahora de lo anterior teníamos que existe $J \subset I_{i_{1},\ldots,i_{n}}$ y como $J=I_{i_{1},\ldots,i_{n},i_{n+1}}$ entonces $I_{i_{1},\ldots,i_{n},i_{n+1}}\subset I_{i_{1},\ldots,i_{n}}$.
+        Lo que verifica la condición 1.
+        \item Queda probar la condición 2.
+        
+        Para cada $j$ $(1\leq j\leq n)$ denotamos por $T^{j}_{i_{1},\ldots,i_{n}}$ la restricción de $T^{j}$ al intervalo $I_{i_{1},\ldots,i_{n}}$. Estas transformaciones son inyectivas.
+        
+        Por la Definición \ref{defi3-2}, teníamos que $$T_{i_{1}}(I_{i_{1},i_{2}})=I_{i_{2}}\Rightarrow T^{-1}_{i_{1}}(I_{i_{2}})=I_{i_{1},i_{2}}\subset I_{i_{1}}$$
+        $$
+        \Rightarrow T^{-n}_{i_{1},\ldots,i_{n}}(I_{i_{n+1}})=I_{i_{1},\ldots,i_{n+1}}\subset I_{i_{1},\ldots,i_{n}}
+        $$
+        $$
+        \Rightarrow T(I_{i_{1},\ldots,i_{n+1}})=T(T^{-n}_{i_{1},\ldots,i_{n}}(I_{i_{n+1}})) \subset T(I_{i_{1},\ldots,i_{n}})=I_{i_{2},\ldots,i_{n}}
+        $$
+        Por lo tanto, $T(I_{i_{1},\ldots,i_{n+1}})\subset I_{i_{2},\ldots,i_{n}}$.
+        
+        Luego,
+        $$
+        T_{i_{1}, i_{2} \ldots, i_{n}}^{-(n-1)}\left(I_{i_{n+1}}\right)=T_{i_{2}, \ldots, i_{n}}^{-(n-1)}\left(I_{i_{n+1}}\right)
+        $$
+        Así mismo tenemos,
+        $$
+        \begin{aligned}
+        T\left(I_{i_{1}, \ldots, i_{n}, i_{n+1}}\right) &=T\left(T_{i_{1}, \ldots, i_{n}}^{-n}\left(I_{i_{n+1}}\right)\right)=T_{i_{1}, \ldots, i_{n}}^{-(n-1)}\left(I_{i_{n+1}}\right)=\\
+        &=T_{i_{2}, \ldots, i_{n}}^{-(n-1)}\left(I_{i_{n+1}}\right)
+        \end{aligned}
+        $$
+        
+        Por otro lado, por H3,
+        $$
+        T^{n-1}\left(I_{i_{2}, \ldots, i_{n}, i_{n+1}}\right)=I_{i_{n+1}}
+        $$
+        Esto es,
+        $$
+        I_{i_{2}, \ldots, i_{n}, i_{n+1}}=T_{i_{2} \ldots, i_{n}}^{-(n-1)}\left(I_{i_{n+1}}\right)
+        $$
+        
+        Por lo tanto,
+        $$
+        T\left(I_{i_{1}, \ldots, i_{n}, i_{n+1}}\right)=T_{i_{2} \ldots, i_{n}}^{-(n-1)}\left(I_{i_{n+1}}\right)=I_{i_{2}, \ldots, i_{n}, i_{n+1}}
+        $$
+    \end{itemize}
+    Esto termina la construcción de los intervalos $I_{i_{1}, \ldots, i_{n}, i_{n+1}}$.
+\end{enumerate}
+De esa manera queda probada la proposición.
+\end{proof}
+
+A continuación relacionaremos los intervalos $I_{i_{1},\ldots,i_{n}}$ con los cocientes de la expansión en fracción continua.
+
+\begin{prop}
+Dado $x \in(0,1)$ sea $a_{i}(x)$ el i-esimo cociente de x. Entonces
+$$
+I_{i_{1}, \ldots, i_{n}}=\left\{x \in(0,1): i_{1}=a_{1}(x), \ldots, i_{n}=a_{n}(x)\right\}
+$$
+\label{teo3-2}
+\end{prop}
+\begin{proof}\hfill
+\begin{itemize}
+    \item[($\subseteq$)]Se probará por inducción sobre $n$.
+    Consideramos
+    $$
+    x \in I_{i_{1}}=\left(\frac{1}{i_{1}+1}, \frac{1}{i_{1}}\right]\Rightarrow \cfrac{1}{i_{1}+1}<x\leq\frac{1}{i_{1}}\Rightarrow i_{1} \leq \frac{1}{x} < i_{1}+1
+    $$
+    $\Rightarrow \left\lfloor\frac{1}{x}\right\rfloor = i_{1}$ por la definición de parte entera.
+    
+    
+    Además, recordemos que $a_{1}(x)=\left\lfloor\frac{1}{x}\right\rfloor=i_{1}$.
+    
+    
+    Así tenemos la prueba para $n=1$. 
+    \\
+    \\
+    Supangamos ahora la inclusión es verdadera para todo $1 \leqslant k \leqslant n$.
+    \\
+    i.e. $\quad x \in I_{i_{1},\ldots, i_{n}}  \Rightarrow i_{1}=a_{1}(x), \ldots, i_{n}=a_{n}(x)$ %por las propiedades de $I_{i_{1} \ldots, i_{k}}$
+    \\
+    \\
+    Veamos se cumple para n+1 : 
+    \\
+    \\
+    Consideramos
+    $
+    x \in I_{i_{1}, \ldots, i_{n+1}} \Rightarrow T(x) \in T\left(I_{i_{1}, \ldots, i_{n+1}}\right)
+    $
+    \\
+    Por las Proposición \ref{PropInterval} condición (2), tenemos
+    $$
+    T(x) \in T\left(I_{i}, \ldots, i_{n+1}\right)=I_{i_{2}, \cdots, i_{n+1}}$$
+    Por la hipótesis inductiva tendríamos:
+    $$
+    a_{1}(T(x))=i_{2}, \ldots, a_{n}(T(x))=i_{n+1}
+    $$
+    Además, $T^{n}\left(I_{{i_{1}}, \ldots, i_{n+1}}\right)=I_{i_{n+1}}$.
+    \\
+    \\
+    Como $T^{n}(x) \in T^{n}\left(I_{i_{1}, \ldots, i_{n+1}}\right)=I_{i_{n+1}}$
+    \\
+    \\
+    $\Rightarrow T^{n}(x)\in I_{i_{n+1}}$
+    $\Rightarrow \quad \left\lfloor\cfrac{1}{T^{n}(x)}\right\rfloor=i_{n+1}$, donde $a_{n+1}(x)=\left\lfloor\cfrac{1}{T^{n}(x)}\right\rfloor$.
+    \\
+    \\
+    Veamos $a_{n}(T(x))=a_{n+1}(x)$. En efecto, si $x=\left[a_{1,} \ldots, a_{n+1}, \ldots\right] \Rightarrow T(x)=\left[a_{2}, \ldots, a_{n+1}, \ldots\right]$
+    \\
+    entonces 
+    \begin{equation}
+    \begin{array}{l}
+    a_{1}(T(x))=a_{2}(x)=i_{2}\\
+    a_{2}(T(x))=a_{3}(x)=i_{3} \\
+    \vdots \\
+    a_{n-1}(T(x))=a_{n}(x)=i_{n} \\
+    a_{n}(T(x))=a_{n+1}(x)=i_{n+1}
+    \end{array}
+    \label{equa4}
+    \end{equation}
+    Esto conluye la prueba de la inclusión ``$\subset$''.
+    \item[($\supseteq$)] Para la otra inclusión se sigue de la definición de los intervalos $I_{i_{1}, \ldots, i_{n}}$ por inducción.
+    \\
+    \\
+    $n=1: \quad a_{1}(x)=i_{1} \Longleftrightarrow \left\lfloor\cfrac{1}{x}\right\rfloor=i_{1} \Longleftrightarrow x \in I_{i_{1}}=\left(\frac{1}{i_{1}+1}, \frac{1}{i_{1}}\right]$
+    \\
+    \\
+    (Hip.Ind.) Supongamos que es válido para las de longitud $n$.
+    \\
+    i.e. $a_{1}(x)=i_{1}, \ldots, a_{n}(x)=i_{n} \Rightarrow x \in I_{i_{1}, \ldots, i_{n}}$
+    \\
+    \\
+    Veamos es válido para las de longitud $n+1$.
+    \\
+    \\
+    Tomamos $x$ tal que $a_{1}(x)=i_{1}, \ldots, a_{n+1}(x)=i_{n+1} .$
+    \\
+    \\
+    Por probar que $x \in I_{i_{1}, \ldots, i_{n+1}}$
+    \\
+    Por (\ref{equa4}) tenemos $a_{1}(T(x))=i_{2}, \ldots, a_{n}(T(x))=i_{n+1}$
+    \\
+    y por (Hip. Ind.) $T(x) \in I_{i_{2}, \ldots, i_{n+1}}=T\left(I_{j, \ldots, i_{n+1}}\right)$
+    $\Rightarrow x \in I_{j, \ldots i_{n+1}}$ para algún $j$
+    \\
+    \\
+    Vamos a probar que $j=i_{1}$. \\
+    Supongamos lo contrario, que $j \neq i_{1} \Rightarrow I_{j} \cap I_{i_{1}}=\emptyset$
+    \\
+    \\
+    Como $ I_{j, \ldots, i_{n+1}}\subset I_{j} \quad \wedge \quad x \in I_{i_{1}}$
+    \\
+    $\Rightarrow x \in I_{j}\quad \wedge \quad x \in I_{i_{1}}$
+    \\
+    $\Rightarrow x\in I_{j}\cap I_{i_{1}}$
+    \\
+    $\Rightarrow I_{j}\cap I_{i_{1}}\neq\emptyset$, la cual es una contradicción.
+    \\
+    Por lo tanto, $j=i_{1}$.
+
+\end{itemize}
+Por las dos inclusiones, tendríamos probada la proposición. 
+\end{proof}
+
+\begin{prop}
+Dado una sucesión infinita $\{i_{k}\}_{k\in\mathbb{N}}$ de números naturales existe un único número (necesariamente irracional) $x \in(0,1)$ cuyos cocientes $\{ a_{k}(x)\}_{k\in\mathbb{N}}$ verifica $a_{k}(x)=i_{k}, \forall k$.
+\label{teo3-3}
+\end{prop}
+\begin{proof}
+Tenemos $x \in(0,1)$ cuyos cocientes son $\left\{a_{k}(x)\right\}_{k\in\mathbb{N}}$
+\begin{equation*}
+    \begin{array}{l}
+    a_{1}(x)=i_{1} \Longleftrightarrow x \in I_{i_{1}}\\
+    a_{1}(x)=i_{1}, a_{2}(x)=i_{2} \Longleftrightarrow x \in I_{i_{1}, i_{2}}\\
+    a_{1}(x)=i_{1}, a_{2}(x)=i_{2}, a_{3}(x)=i_{3} \Longleftrightarrow x \in I_{i_{1}, i_{2}, i_{3}}
+    \\
+    \vdots
+    \\
+    a_{1}(x)=i_{1}, a_{2}(x)=i_{2}, \ldots, a_{n}(x)=i_{n} \Longleftrightarrow x \in I_{i_{1}, i_{2}, \ldots, i_{n}}
+    \\
+    \vdots
+    \end{array}
+    \end{equation*}
+    Se observa que $x \in \displaystyle\bigcap_{k=1}^{\infty} I_{i_{1}, \ldots, i_{k}} \neq \emptyset$
+    \\
+    entonces por la Proposición \ref{teo3-2} se verifica $a_{k}(x)=i_{k}, \forall k \in \mathbb{N}$.
+    \\
+    La irracionalidad de x se sigue del hecho de que su representación en fracción continua es infinita y por tanto $T^{i}(x) \neq 0$,  $\forall i \geqslant 0$ de la Observación \ref{obs2}.
+    \\
+    La unicidad es equivalente a que la intersección $\displaystyle\bigcap_{k=1}^{\infty}I_{i_{1},\ldots,i_{k}}$ sea exactamente un punto.
+    \\
+    En efecto, supongamos por el absurdo que existen 2 puntos $x,y$ con $x<y$ en la intersección.
+    \\
+    Tenemos que $x, y$ son irracionales. Como el intervalo $[x, y]$ contiene números racionales, entonces por la Observación \ref{obs2}, existe $\ell\geq1$ tal que $0\in T^{\ell}([x,y])$.
+    \\
+    Por otro lado, por la Proposición \ref{PropInterval} condición (3), $\mathrm{T}^{\ell}([x, y])=[0,1)$.
+    \\
+    Como $T^{\ell}$ es estrictamente monótona.
+    \\
+    $\Rightarrow T^{\ell}(x)=0 \quad \vee \quad T^{\ell}(y)=0$
+    \\
+    $\Rightarrow x\in\mathbb{Q}$ $\vee$ $y\in\mathbb{Q}$, la cual es una contradicción.
+    \\
+    Luego, tiene exactamente un punto en la intersecuión.
+    \\
+    Por lo tanto, existe un único irracional $x\in(0,1)$ cuyos cocientes son $\{a_{k}\}_{k\in\mathbb{N}}$ que verifican $a_{k}(x)=i_{k}$, $\forall k$.
+\end{proof}
