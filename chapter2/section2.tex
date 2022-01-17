@@ -1,0 +1,400 @@
+\section{Propiedades Topológicas}
+En esta sección estudiaremos algunas propiedades topólogicas de la Transformación de Gauss: transitividad, topológicamente mixing, existencia de órbitas densas y la densidad de los puntos periódicos. Estas propiedades son resultado de la construcción de los intervalos $I_{[n]}=I_{i_{1},\ldots,i_{n}}$ de la sección anterior.
+
+\begin{defi}
+Considere un espacio métrico (X,d). Una función \\$f: X\rightarrow X$ es
+\begin{itemize}
+    \item Topológicamente transitiva: Si para todo par de conjuntos abiertos no vacíos U y V de X existe $n \in \mathbb{N}$ tal que $f^{n}(U)\cap V\neq\emptyset$.
+    \item Topológicamente mixing: Si para todo par de conjuntos abiertos no vacíos U y V de X existe $k_{0}\in \mathbb{N}$ tal que se verifica $f^{n}(U)\cap V\neq\emptyset$ para todo $n\geq k_{0}$.
+\end{itemize}
+
+\end{defi}
+
+\begin{obs}
+Toda transformación topológicamente mixing es topológicamente transitiva. Sin embargo, existen transformaciones topológicamente transitivas que no son mixing. Los ejemplos más simples son las rotaciones irracionales del círculo, que obviaremos su estudio pero puede ser encontrado en \cite{Portugues}.
+\end{obs}
+
+
+
+\begin{prop}
+La transformación de Gauss es topológicamente mixing.
+\end{prop}
+
+\begin{proof}
+Consideremos dos abiertos no vacíos U y V de [0,1).
+\\
+Como todo intervalo abierto contiene infinitos intervalos $I_{i_{1}, \ldots, i_{k}}$.
+\\
+Existe un intervalo $I_{i_{1}, \ldots, i_{j}, k}$ contenido en U para $j$ suficientemente grande.
+\\
+Por la Proposición \ref{PropInterval} condición (3), obtenemos
+\\
+$$
+\begin{array}{l}
+T^{j}(I_{i_{1}, \ldots, i_{j},k})=I_{k}\\
+T^{j+1}(I_{i_{1}, \ldots, i_{j},k})=T(I_{k})=[0,1)\\
+T^{j+2}(I_{i_{1}, \ldots, i_{j},k})=T^{2}(I_{k})=T([0,1))=[0,1)\\
+\vdots\\
+\end{array}
+$$
+Por inducción, $\forall m\geq1$, $T^{j+m}(I_{i_{1}, \ldots, i_{j},k})=T^{m}(I_{k})=[0,1)\\$
+$$
+[0,1)=T^{j+m}\left(I_{i_{1}, \ldots, i_{j},k}\right)\subset T^{j+m}(U)$$
+Luego, $T^{j+m}(U)=[0,1), \forall m \geqslant 1$
+\\
+Tomando $j=k_{0}$, tenemos $n=k_{0}+m\geq k_{0}$.
+\\
+Entonces, $T^{n}(U) \cap V=V \neq \emptyset ,\quad \forall n\geq k_{0}$.
+\\
+Por lo tanto, T es topológicamente mixing.
+\end{proof} 
+
+Tenemos que la transformación de Gauss es topológicamente mixing, lo que significa que iterando positivamente cualquier intervalo abierto $U$ (esto es, considerando las imágenes $T^{i}(U)$, $i\geq0$) los conjuntos $T^{i}(U)$ se distribuyen a lo largo de todo el intervalo de (0,1). Ahora, lo siguiente sería entender mejor esta distribución, la cual para ello se introduce herramientas ergódicas (probabilísticas) que se verían en un siguiente trabajo analizando las propiedades ergódicas de la transformación de Gauss. Además, de la proposición anterior, $T$ es transitiva, lo cual significa intuitivamente que la dinámica no se puede dividir en dos o más conjuntos porque todos sus elementos (iterados) van a estar mezclados de alguna manera, es decir, es indescomponible.
+\\
+
+\textbf{Escólio.} Dado cualquier conjunto abierto $U$ de $[0,1)$ existe $k>0$ tal que $T^{k}(U)=[0,1)$.
+\\
+
+Por otro lado, ciertas fracciones continuas, como
+$$
+\sqrt{11} = 3+[3,6,3,6,\ldots] = 3+[\overline{3,6}],
+$$
+son períodicos solo después de una determinado término. Y otras como
+$$
+\sqrt{11} +3 = [6,3,6,\ldots] = [\overline{6,3}],
+$$
+son periódicas desde el principio y se denominan fracciones continuas puramente periódicas.
+
+Por ello, introducimos una notación para la expansión en fracciones continuas periódicas. Hay dos tipos: las puramente periódicas y las pre-periódicas (aquellas que son periódicas a partir de cierto dígito).
+
+Decimos que la expasión en fracción continua del número x es:
+\begin{itemize}
+    \item Puramente periódica si $x=a_{0}+[a_{1},a_{2},\ldots]$, $a_{i}=a_{i+m}$ para todo $i\geq0$ donde $m$ es el mínimo con tal propiedad.
+    
+    En este caso escribimos $x=\overline{a_{0}+[a_{1},\ldots,a_{m-1}]}$.
+    
+    Observamos que para los números del intervalo $(0,1)$ el número $a_{0}=0$ no es considerado. Por tanto, ser periódico de periódo $m$ significa que
+    $$
+    x=[\overline{a_{1},\ldots,a_{m}}], a_{i}=a_{i+m}\quad\forall i\in\mathbb{N}
+    $$
+    Notemos que $x\in(0,1)$ tiene expansión periódica de periódo $m$ si y solamente si, $T^{m}(x)=x$ y $T^{j}(x)\neq x$ para $0<j<m$.
+    \item Pre-periódica de periódo $m>0$ si existe $n\geq1$ tal que
+    $$
+    x=a_{0}+[a_{1},a_{2},\ldots], a_{n+(i+m)}=a_{n+i}\quad\forall i\in\mathbb{N}
+    $$
+    donde $n$ y $m$ son mínimos con tal propiedad.
+    
+    Esto es, existe un bloque inicial seguido de otro bloque se repite infinitas veces.
+    
+    La notación para ese caso es
+    $$
+    x=a_{0}+[a_{1},\ldots,a_{n-1},\overline{a_{n},\ldots,a_{n+m-1}}]
+    $$
+    Además, observamos que $x\in(0,1)$ tiene expansión pre-periódica si y solo si existe $n$ tal que $T^{n}(x)$ tiene expansión periódica.
+\end{itemize}
+\\
+Teniendo la notación de la expansión en fracciones continuas períodicas, veamos algunos teorema clásicos para estudiar los puntos periódicos.
+
+
+\begin{teo}
+\textbf{(Galois)} Sea $x$ un número irracional en $(0,1)$. La expansión en fracciones continuas de $x$ es puramente periódica si y solo si $x$ es solución de una ecuación cuadrática con coeficientes enteros y, además, que su conjugado algebraico (es decir, la otra raíz de la cuadrática) se encuentra en el intervalo $(-1, 0)$.
+\label{Galois}
+\end{teo}
+\begin{proof}
+En \cite{Olds}.
+\end{proof}
+\begin{ejem}
+Un ejemplo numérico del teorema de Galois. Consideramos la fracción continua puramente periódica
+    $$
+    \alpha = 3+[1,2,3,1,2,\ldots]=\overline{3+[1,2]}
+    $$
+    Podemos escribirlo
+    \begin{equation}
+        \alpha=3+\cfrac{1}{1+\cfrac{1}{2+\cfrac{1}{\alpha}}}
+        \label{ecuacion4.2}
+    \end{equation}
+    Ahora es necesario recordar un resultado del capítulo anterior (Proposición \ref{ProRed}). Si
+    \begin{equation}
+        \alpha = a_{0}+\cfrac{1}{a_{1}+\cfrac{1}{\ddots+\cfrac{1}{a_{n-1}+\cfrac{1}{a_{n}}}}}
+        \label{ecuacion4.3}
+    \end{equation}
+    donde
+    \begin{equation}
+        \alpha_{n} = a_{n} + \cfrac{1}{a_{n+1}+\cfrac{1}{\ddots}}
+        \label{ecuacion4.4}
+    \end{equation}
+    entonces
+    \begin{equation}
+        \alpha = \frac{\alpha_{n}p_{n-1}+p_{n-2}}{\alpha_{n}q_{n-1}+q_{n-2}}
+        \label{ecuacion4.5}
+    \end{equation}
+    donde $\frac{p_{n-2}}{q_{n-2}}$ y $\frac{p_{n-1}}{q_{n-1}}$ son las reducidas correspondientes, respectivamente a los cocientes $a_{n-2}$ y $a_{n-1}.$ En efecto, (\ref{ecuacion4.5}) muestra que podemos tratar (\ref{ecuacion4.3}) como si fuera una fracción continua finita y que al calcular $\alpha$ podemos considerar $\alpha_{n + 1}$ como si fuera un cociente parcial legítimo.
+    
+    En el caso de fracciones continuas puramente períodica
+    $$
+    \alpha = \overline{a_{0}+[a_{1},a_{2},\ldots,a_{n}}]
+    $$
+    vemos que $\alpha_{n} = \alpha,$
+    y por lo tanto (\ref{ecuacion4.5}) se muestra que $\alpha$ puede ser calculado por la ecuación
+    \begin{equation}
+        \alpha=\frac{\alpha p_{n-1}+p_{n-2}}{\alpha q_{n-1}+q_{n-2}}.
+        \label{ecuacion4.6}
+    \end{equation}
+    Ahora aplicamos (\ref{ecuacion4.6}) para el caso especial (\ref{ecuacion4.2}), usamos $a_{0}=3$, $a_{1}=1$, $a_{2}=2$, $\alpha=\overline{3+[1,2]}$. Obteniendo la siguiente tabla
+    \begin{table}[h]
+    \begin{center}
+    \begin{tabular}{| c | c |}
+    \hline
+    $p_{1}=a_{1}p_{0}+p_{-1}$ & $q_{1}=a_{1}q_{0}+q_{-1}$ \\ 
+    $p_{1}=1\cdot3+1=4$ & $q_{1}=1\cdot1+0=1$ \\\hline
+    $p_{2}=a_{2}p_{1}+p_{0}$ & $q_{2}=a_{2}q_{1}+q_{0}$ \\
+    $p_{2}=2\cdot4+3=11$ & $q_{2}=2\cdot1+1=3$ \\\hline
+    \end{tabular}
+    %\caption{}
+    \label{tab:reducidas}
+    \end{center}
+    \end{table}
+    
+    Por lo tanto, obtenemos
+    $$
+    \alpha=\frac{\alpha p_{2}+p_{1}}{\alpha q_{2}+q_{1}}=\frac{11 \alpha+4}{3 \alpha+1}
+    $$
+    Esto conduce a la ecuación cuadrática
+    \begin{equation}
+    3 \alpha^{2}-10 \alpha-4=0 
+    \label{ecuacion4.7}
+    \end{equation}
+    que es la misma ecuación que hubiéramos obtenido si hubiéramos trabajado con la ecuación (\ref{ecuacion4.2}).
+    
+    Ahora consideramos el número $\beta$ obtenido de $\alpha$ invirtiendo el período, es decir, el número
+    $$
+    \beta=[\overline{2,1,3}]=2+\cfrac{1}{1+\cfrac{1}{3+\cfrac{1}{\beta}}}
+    $$
+    Análogamente, aplicando (\ref{ecuacion4.6}) a $\beta,$ y usamos $a_{0}=2$, $a_{1}=1$, $a_{2}=3$, $\beta=\overline{2+[1,3]}$. Obtenemos la siguiente tabla:
+    \begin{table}[h]
+    \begin{center}
+    \begin{tabular}{| c | c |}
+    \hline
+    $p_{1}=a_{1}p_{0}+p_{-1}$ & $q_{1}=a_{1}q_{0}+q_{-1}$ \\ 
+    $p_{1}=1\cdot2+1=3$ & $q_{1}=1\cdot1+0=1$ \\\hline
+    $p_{2}=a_{2}p_{1}+p_{0}$ & $q_{2}=a_{2}q_{1}+q_{0}$ \\
+    $p_{2}=3\cdot3+2=11$ & $q_{2}=3\cdot1+1=4$ \\\hline
+    \end{tabular}
+    %\caption{}
+    \label{tab:reducidas}
+    \end{center}
+    \end{table}
+    
+    Por lo tanto, obtenemos
+    \begin{equation}
+        \beta=\frac{11 \beta+3}{4 \beta+1}
+        \label{ecuacion4.8}
+    \end{equation}
+    esto conduce a la ecuación cuadrática
+    \begin{equation}
+            4 \beta^{2}-10 \beta-3=0
+            \label{ecuacion4.9}
+    \end{equation}
+    La ecuación (\ref{ecuacion4.9}) se puede escribir en la forma
+    \begin{equation}
+        3\left(-\frac{1}{\beta}\right)^{2}-10\left(-\frac{1}{\beta}\right)-4=0
+        \label{ecuacion4.10}
+    \end{equation}
+    Comparando (\ref{ecuacion4.7}) y (\ref{ecuacion4.10}) vemos que la ecuación cuadrática
+    \begin{equation}
+    3 x^{2}-10 x-4=0
+    \label{ecuacion4.11}
+    \end{equation}
+    tiene soluciones $ x = \alpha $ y $ x = -1 / \beta. $ Estas raíces no pueden ser iguales ya que tanto $ \alpha $ como $ \beta $ son positivas, por lo que $ \alpha $ y $ -1 / \beta $ tiene signos opuestos. Además, $ \beta> 1, $ y entonces $ -1 <-1 / \beta <0. $ Esto muestra que la ecuación cuadrática (\ref{ecuacion4.7}),  o  (\ref{ecuacion4.11}), tiene la raíz positiva $ \alpha $ y la raíz negativa $ \alpha ^ {\prime} = - 1 / \beta, $ donde $ -1 <\alpha ^ {\prime} <0. $
+    
+    Es fácil verificar estos resultados numéricamente. La fórmula cuadrática muestra que (\ref{ecuacion4.7}) tiene dos raíces,
+    $$
+    \alpha=\frac{5+\sqrt{37}}{3} \quad \text { y } \quad \alpha^{\prime}=\frac{5-\sqrt{37}}{3}
+    $$
+    La raíz positiva $\beta$ de (\ref{ecuacion4.9}) es
+    $$
+    \beta=\frac{5+\sqrt{37}}{4}
+    $$
+    y por lo tanto
+    $$
+    -\frac{1}{\beta}=\frac{-4}{5+\sqrt{37}}=\frac{-4}{5+\sqrt{37}} \cdot \frac{5-\sqrt{37}}{5-\sqrt{37}}=\frac{5-\sqrt{37}}{3}
+    $$
+    que muestra que $ -1 / \beta $ es igual a $ \alpha ^ {\prime}. $ Además, con tres decimales, $ \alpha = 3.694> 1, $ y $ \alpha^{\prime}= -0.361 , $ de modo que $ -1 <\alpha^{\prime} <0. $
+
+    La fracción continua puramente periódica $ \alpha $ es de hecho un irracional cuadrático.
+\end{ejem}
+\begin{teo}
+\textbf{(Lagrange)} Sea $x$ un número irracional. La expansión en fracciones continuas de $x$ es pre-periódica si y solo si $x$ es solución de una ecuación cuadrática con coeficientes enteros.
+\label{Lagrange}
+\end{teo}
+\begin{proof}
+En \cite{Portugues}.
+\end{proof}
+
+%Prueba del Teorema \ref{Lagrange} se divide en dos proposiciones.
+
+%\begin{prop}
+%Si un número irracional $x$ tiene expansión puramente periódica
+%o pre-periódica entonces satisface una ecuación cuadrática.
+%\end{prop}
+
+%\begin{lemma}
+%Considere $x\in(0,1)$ irracional con expansión puramente periódica de periódo $m$. Entonces $T^{m}(x)=x$.
+%\end{lemma}
+%\begin{proof}
+%Por hipótesis, se verifica
+%$$
+%x=\left[\overline{a_{1}, \ldots, a_{m}}\right]
+%$$
+%Observamos, que por la definición de $T$ y de los cocientes de %$x$,
+%$$
+%x=\left[a_{1}, \ldots, a_{m}+T^{m}(x)\right]
+%$$
+%Por otro lado, por la periodicidad,
+%$$
+%\begin{aligned}
+%x &=\left[a_{1}, \ldots, a_{m}+\left[a_{1}, \ldots, a_{m}+\ldots\right]\right]=\\
+%&=\left[a_{1}, \ldots, a_{m}+x\right]
+%\end{aligned}
+%$$
+%Luego,
+%$$
+%\left[a_{1}, \ldots, a_{m}+T^{m}(x)\right]=\left[a_{1}, \ldots, a_{m}+x\right]
+%$$
+%Por lo tanto, $T^{m}(x)=x,$ obteniendo así el lema.
+%\end{proof}
+
+%\begin{prop}
+%Considere un número irracional $x$ que es solución
+%de una ecuación cuadrática con coeficientes enteros. Entonces la expansión en fracciones continuas de $x$ es puramente periódica o pre-periódica.
+%\end{prop}
+
+\begin{ejem}
+Veamos que los números irracionales del intervalo $(0,1)$ de periódos uno y dos son algebraicos.
+
+En efecto, si $T(x)=x=[\overline{a_{1}}] \quad \Longleftrightarrow\quad x=\cfrac{1}{a_{1}+\cfrac{1}{a_{1}+\ldots}}\cdot$
+
+Luego, $x=\cfrac{1}{a_{1}+x}\Longleftrightarrow x^{2}+a_{1}x-1=0$.
+
+
+Por otro lado, si $T^{2}(x)=x=[\overline{a_{1},a_{2}}]\quad \Longleftrightarrow\quad x=\cfrac{1}{a_{1}+\cfrac{1}{a_{2}+\cfrac{1}{a_{1}+\cfrac{1}{a_{2}+\ldots}}}}\cdot$
+
+Tenemos, $x=\cfrac{1}{a_{1}+\cfrac{1}{a_{2}+x}} \Longleftrightarrow $ $\cfrac{1}{x}=a_{1}+\cfrac{1}{a_{2}+x}$
+$$
+\Longleftrightarrow \cfrac{1}{x}-a_{1}=\cfrac{1}{a_{2}+x}\Longleftrightarrow \cfrac{1-a_{1}x}{x}=\cfrac{1}{a_{2}+x}
+$$
+$$
+\Longleftrightarrow(a_{2}+x)(1-a_{1}x)=x\Longleftrightarrow a_{2}-a_{2}a_{1}x+x-a_{1}x^{2}=x
+$$
+$$
+\Longleftrightarrow a_{1}x^{2}+a_{2}a_{1}x-a_{2}=0
+$$
+De esta forma, para ambos casos tenemos que son números algebraicos.
+\end{ejem}
+
+\begin{cor}
+Los puntos periódicos de la Transformación de Gauss son los correspondientes irracionales en (0,1) que son solución de una ecuación cuadrática con coeficientes enteros.
+\end{cor}
+\begin{proof}
+Sea $x=[a_{1},a_{2},\ldots]$ un número irracional algebraico. Por el Teorema de Galois, $x$ es puramente periódico.
+
+Ahora, recordemos que la Transformación de Gauss esta dada por un desplazamiento de los cocientes de la expansión en fracción continua por lo que siempre que $x$ sea periódica, $T(x)$ también será periódica.
+
+Es decir, sea $x=[\overline{a_{1},a_{2},\ldots,a_{m}}]$ para $m\in\mathbb{N}$, tenemos que $T(x)=[\overline{a_{2},a_{3},\ldots,a_{m}}]$.
+De esta manera queda probado el corolario.
+\end{proof}
+
+\begin{ejem}
+Un ejemplo de particular interés es $\Phi$, el número áureo, la cual satiface $\Phi^{2}-\Phi-1=0$. Y su fracción continua de $\Phi$ es $\Phi=1+[1,1,1,1,\ldots]$.
+
+Así, $\frac{1}{\Phi}=[1,1,1,\ldots]$, la cual muestra que $\frac{1}{\Phi}$ es un punto periódico de periódo 1 de la Transformación de Gauss.
+\end{ejem}
+
+Notemos que hay infinitos puntos de cada período. Por ejemplo, $[\overline{a_{1},a_{2},\ldots,a_{k}}]$ tiene período $k$, para cualquier elección de enteros $a_{1},a_{2},\ldots,a_{k}$. Teniendo así puntos de período arbitrario, la cual es una característica de un mapeo caótico \cite{TYJY1975}. Pues para Li y Yorke si un sistema presenta un punto periódico de período tres entonces es un sistema caótico.
+
+
+\begin{cor}
+Los puntos periódicos de la transformación de Gauss forman un conjunto denso de $[0,1)$.
+\end{cor}
+\begin{proof}
+Por el Corolario 3.1, tenemos que los puntos periódicos de la Transformación de Gauss son los correspondientes irracionales en $(0,1)$ que son algebraicos. Ahora, como los números irracionales son densos en $\mathbb{R}$ también lo serían en el intervalo $[0,1)$. Por lo tanto, $\overline{Per(T)}=[0,1)$.
+\end{proof}
+
+Del corolario anterior tenemos que la transformación de Gauss es un sistema dinámico que presenta partes deterministas pues presenta un conjunto de puntos periódicos denso en [0,1), lo cual intuitivamente significa que tiene un elemento de regularidad. Más aún, verificar que la transformación es sensible a las condiciones iniciales significaría que en los puntos iniciales cercanos tienen órbitas que se separan a una tasa exponencial, la cual lo hace impredecible y satisfaciendo así, la definición de caos en el sentido de Devaney \cite{Devaney1989} que no probaremos aquí pero puede ser encontrada en el siguiente artículo \cite{chaos}. Por su parte, la definición de Devaney nos dice que un sistema es caótico si cumple tres condiciones: transitividad, tiene conjunto periódico denso y sensibilidad a las condiciones iniciales. 
+
+\begin{obs}
+Por supuesto, los irracionales no cuadráticos también tienen expansiones de fracciones continuas. Según el teorema de Lagrange, estas fracciones continuas son \textbf{aperiódicas} y, por tanto, la órbita de estos puntos iniciales bajo la transformación de Gauss es aperiódica. Tenga en cuenta que la mayoría de los números en $[0,1)$ son por tanto aperiódicos.
+\end{obs}
+
+\begin{ejem}
+$e$ (la base de los logaritmos naturales) tienen una expansión en fracción continua aperiódica 
+$$
+e=2+[1,2,1,1,4,1,1,6,\ldots]. 
+$$
+\end{ejem}
+%Los elementos de la órbita de este punto inicial son siempre de la forma $[1,2,N,1,1,\ldots],$\\
+%$[2N,1,1,\ldots],\text{ o } [1,1,2N,\ldots]$, la cuales tienden a 1,0 y 1/2 respectivamente. Así, el conjunto $\omega-límite$ \cite{Coppel} de esta órbita es el conjunto \{1,0,1/2\} las cuales a diferencia de los conjuntos límites de mapeos continuos, es no invariante bajo la transformación de Gauss desde que T(1
+%)=T(1/2)=0, por lo tanto T aplicado a este conjunto es simplemente 0. En otras palabras, tenemos una órbita asintóticamente periódica que no es asintótica a una órbita real del mapa. Esto no puede suceder en un sistema dinámico discreto con un mapa continuo.
+\\
+
+Por último, antes de probar la existencia de órbitas densas, decimos que un conjunto $B$ de $\mathbb{R}$ es residual si existe una familia $\{U_{n}\}_{n\in\mathbb{N}}$ de abiertos densos en $\mathbb{R}$ tal que $\displaystyle\bigcap_{n\in\mathbb{N}}U_{n}\subset B$. 
+\\
+
+Veamos el Teorema de Baire que afirma que los conjuntos residuales de $\mathbb{R}$ son densos.
+\begin{teo}
+\textbf{(Teorema de Baire)} Todo subconjunto residual de $\mathbb{R}$ es denso en $\mathbb{R}$. 
+\end{teo}
+\begin{proof}
+En \cite{Portugues}.
+\end{proof}
+
+Usando el Teorema de Baire probaremos el siguiente resultado:
+
+\begin{prop}
+Existe un conjunto residual $D$ de $[0,1)$ tal que $\mathcal{O}_{T}^{+}$ de cualquier punto de $D$ es densa en $[0,1)$.
+\end{prop}
+\begin{proof}\hfill
+\begin{itemize}
+    \item[i)] Dado cualquier abierto $U$ del intervalo $[0,1)$ denotamos el conjunto de las preimagenes de $U$,
+    $$
+    P(U)=\displaystyle\bigcup_{i\in\mathbb{N}}T^{-i}(U),
+    $$
+    \item[ii)] Veamos $P(U)$ es denso en $[0,1)$.
+    
+    En efecto, tomamos $x\in[0,1)$ y $\varepsilon>0$. 
+    
+    Por el Escólio, sea $(x-\varepsilon,x+\varepsilon)$ conjunto abierto de $[0,1)$, existe $i>0$ tal que $T^{i}((x-\varepsilon,x+\varepsilon))=[0,1)$.
+    
+    Tenemos que $U\subset T^{i}((x-\varepsilon,x+\varepsilon))$ entonces $T^{-i}(U)\subset(x-\varepsilon,x+\varepsilon)$.
+    
+    Luego, $(x-\varepsilon,x+\varepsilon)\cap T^{-i}(U)\neq\emptyset$.
+    
+    Por tanto, $P(U)=\displaystyle\bigcup_{i\in\mathbb{N}}T^{-i}(U)$ es denso en $[0,1)$.
+    \item[iii)] Recordemos que $T$ no es continua por lo que no podemos garantizar que el conjunto $P(U)$ sea abierto. Por lo que consideramos la restricción $T_{0}$ de $T$ al intervalo $(0,1)-\left\{\frac{1}{k}:k\in\mathbb{N}\right\}$.
+    
+    Ahora $T_{0}$ es continua y es suficiente para obtener que $P(U)$ contiene un abierto que es denso en $[0,1)$.
+    \item[iv)] Consideremos ahora todos los intervalos de radio racional centrados en puntos de $\mathbb{Q}$ contenidos en $[0,1)$.
+    
+    Denotamos esta familia numerable de abiertos por $\{U_{n}\}_{n\in\mathbb{N}}$.
+    
+    Como para todo $n$ :  $P_{n}=P(U_{n})=\displaystyle\bigcup_{i\in\mathbb{N}}T^{-i}(U_{n})$ contiene un subconjunto abierto y denso de $[0,1)$.
+    
+    Denotamos $D=\displaystyle\bigcap_{n\in\mathbb{N}} P_{n}$.
+    Tenemos que existe una familia $\{P_{n}\}_{n\in\mathbb{N}}$ de abiertos densos en $[0,1)$ tal que $\displaystyle\bigcap_{n\in\mathbb{N}} P_{n}\subset D$.
+    
+    Por lo que $D$ es un subconjunto residual de $[0,1)$ y por el Teorema de Baire es denso en $[0,1)$.
+    \item[v)] Veamos que la $\mathcal{O}_{T}^{+}(z)$ para cualquier $z\in D$ es densa en el intervalo $[0,1)$.
+    
+    En efecto, dados $y\in[0,1)$ y $\varepsilon>0$ debemos encontrar un iterado positivo de $z$ en $(y-\varepsilon,y+\varepsilon)$.
+    
+    Notamos que existe algún abierto $U_{n}\subset(y-\varepsilon,y+\varepsilon)$.
+    
+    Sea $z\in D\Rightarrow z\in P(U_{n})=\displaystyle\bigcup_{i\in\mathbb{N}} T^{-i}(U_{n})\Rightarrow \exists j : z\in T^{-j}(U_{n})$.
+    
+    Asimismo, $T^{j}(z)\in U_{n}\subset(y-\varepsilon,y+\varepsilon)$.
+    
+    Luego, $(y-\varepsilon,y+\varepsilon)\cap T^{j}(z)\neq\emptyset$.
+    
+    Por lo tanto, $\mathcal{O}_{T}^{+}(z)$ es densa en $[0,1)$.
+\end{itemize}
+\end{proof}
